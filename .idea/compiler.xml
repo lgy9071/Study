@@ -2,7 +2,6 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
-      <profile default="true" name="Default" enabled="true" />
       <profile name="Gradle Imported" enabled="true">
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="false">
@@ -11,17 +10,9 @@
         <module name="boardTest.main" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="boardTest" target="21" />
-      <module name="boardTest.main" target="21" />
-      <module name="boardTest.test" target="21" />
-    </bytecodeTargetLevel>
+    <bytecodeTargetLevel target="21" />
   </component>
   <component name="JavacSettings">
-    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="boardTest" options="-parameters" />
-      <module name="boardTest.main" options="-parameters" />
-      <module name="boardTest.test" options="-parameters" />
-    </option>
+    <option name="ADDITIONAL_OPTIONS_STRING" value="-parameters" />
   </component>
 </project>
