@@ -13,20 +13,20 @@ public class BoardController2 {
 
     private final BoardService2 boardService2;
 
-    @GetMapping("/board")
+    @GetMapping("/board2")
     public String list(Model model){
         model.addAttribute("boards", boardService2.finalAll());
-        return "board/list";
+        return "board2/list";
     }
 
-    @GetMapping("/board/write")
+    @GetMapping("/board2/write")
     public String writeForm(){
-        return "board/write";
+        return "board2/write";
     }
 
-    @GetMapping("/board/write")
+    @GetMapping("/board2/write")
     public String write(Board2 board2){
         boardService2.save(board2);
-        return "redirect:/board";
+        return "redirect:/board2";
     }
 }
