@@ -2,8 +2,6 @@ package com.example.boardTest.Array;
 
 import java.util.Scanner;
 
-import static com.example.boardTest.Array.InfiniteArrayPractice.*;
-
 public class InfiniteArrayPractice2 {
 
     static String[] users = new String[5];
@@ -44,10 +42,52 @@ public class InfiniteArrayPractice2 {
     }
 
     // 사용자 추가
+    static void addUser(Scanner sc){
+        if(count == users.length){
+            System.out.println("배열이 가득 찼습니다.");
+            return;
+        }
+        System.out.println("추가할 이름: ");
+        String name = sc.nextLine();
+
+        users[count++] = name;
+        System.out.println("추가 완료");
+    }
 
     // 사용자 목록 출력
+    static void printUsers(){
+        if(count == 0){
+            System.out.println("등록된 사용자가 없습니다.");
+            return;
+        }
+
+        for (int i = 0; i < count; i++){
+            System.out.println(i + " : " + users[i]);
+        }
+    }
 
     // 사용자 삭제
+    static void removeUser(Scanner sc){
+        if (count == 0){
+            System.out.println("삭제할 사용자가 없습니다.");
+            return;
+        }
 
+        System.out.println("삭제할 인덱스: ");
+        int index = sc.nextInt();
+        sc.nextLine();
+
+        if(index < 0 || index >= count){
+            System.out.println("잘못된 인덱스입니다.");
+            return;
+        }
+
+        for(int i = index; i < count - 1; i++){
+            users[i] = users[i = 1];
+        }
+
+        users[--count] = null;
+        System.out.println("삭제 완료");
+    }
 
 }
