@@ -24,7 +24,7 @@ public class Board2 {
     public Board2(){
     }
 
-    public Board2(String tltle, String content){
+    public Board2(String title, String content){
         this.title = title;
         this.content = content;
     }
