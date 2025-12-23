@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<!-- HTML5 문서 선언 -->
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+  <!-- 문자 인코딩을 UTF-8로 설정 -->
+  <meta charset="UTF-8">
+
+  <!-- 브라우저 탭에 표시될 제목 -->
+  <title>목록</title>
+</head>
+<body>
+
+<!-- 페이지 메인 제목 -->
+<h1>게시판 목록</h1>
+
+<!-- 구분선 -->
+<hr>
+
+<!-- 게시글 목록을 출력하기 위한 테이블 -->
+<table>
+  <tr>
+    <!-- 게시글 번호 컬럼 -->
+    <th>번호</th>
+
+    <!-- 게시글 제목 컬럼 -->
+    <th>제목</th>
+  </tr>
+
+  <!--
+    Thymeleaf 반복문
+    boards라는 리스트를 순회하면서 board5 변수에 하나씩 담음
+  -->
+  <tr th:each="board5 : ${boards}">
+    <!-- 게시글 ID 출력 -->
+    <td th:text="${board5.id}"></td>
+
+    <!-- 게시글 제목 출력 -->
+    <td th:text="${board5.title}"></td>
+  </tr>
+</table>
+
+</body>
+</html>
